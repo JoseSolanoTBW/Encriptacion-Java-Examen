@@ -32,7 +32,7 @@ public class SymetricEncrypt extends Encryptioner {
 		FileReaderAndWritter.writeBytesFile(messageName, encryptedData, MESSAGE_ENCRYPT_EXTENSION, PATH);
 	}
 
-	public void decryptMessage(String messageName, String keyName) throws Exception {
+	public String decryptMessage(String messageName, String keyName) throws Exception {
 		byte[] encryptedMessage = readMessageFile(messageName, PATH);
 		SecretKeySpec k = getSecretKey(keyName);
 		
@@ -41,8 +41,7 @@ public class SymetricEncrypt extends Encryptioner {
 		
 		byte[] DecryptedData = cipher.doFinal(encryptedMessage);
 		String message = new String(DecryptedData, StandardCharsets.UTF_8);
-		System.out.println("El mensaje era: ");
-		System.out.println(message);
+		return message;
 	}
 	
 	private SecretKeySpec getSecretKey(String keyName) throws Exception{

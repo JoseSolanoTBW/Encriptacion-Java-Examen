@@ -18,8 +18,8 @@ public class EncryptionController {
 		encryptionManager.encryptMessage(messageName, message, name);
 	}
 	
-	public void decryptMessage(EncryptType encryptionType, String messageName,String name) throws Exception {
+	public String decryptMessage(EncryptType encryptionType, String messageName,String name) throws Exception {
 		encryptionManager = EncryptFactory.getEncriptioner(encryptionType);
-		encryptionManager.decryptMessage(messageName, name);
+		return encryptionManager.decryptMessage(messageName, name);
 	}
 }

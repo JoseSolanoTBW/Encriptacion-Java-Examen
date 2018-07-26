@@ -15,7 +15,7 @@ public abstract class Encryptioner {
 	
 	public abstract void encryptMessage(String messageName, String message, String keyName) throws Exception;
 	
-	public abstract void decryptMessage(String messageName, String keyName) throws Exception;
+	public abstract String decryptMessage(String messageName, String keyName) throws Exception;
 	
 	protected byte[] readMessageFile(String messageName, String path) throws Exception{
 		File file = new File(path + messageName + MESSAGE_ENCRYPT_EXTENSION);

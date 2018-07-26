@@ -84,7 +84,9 @@ public class EncriptionClient {
 		String keyName = br.readLine();
 		System.out.println("Message name: ");
 		String messageName = br.readLine();
-		encryptionController.decryptMessage(encrypType, messageName, keyName);
+		System.out.println("El mensaje era: ");
+		String resp = encryptionController.decryptMessage(encrypType, messageName, keyName); 
+		System.out.println(resp);
 	}
 
 	private static void encryptMessage(EncryptType encrypType) throws Exception {
