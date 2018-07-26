@@ -47,7 +47,6 @@ public class AsymetricEncrypt extends Encryptioner {
 
 	public void decryptMessage(String messageName, String keyName) throws Exception {
 		PrivateKey privKey = (PrivateKey) FileReaderAndWritter.readKeyFromFile(keyName, PRIVATE, PATH, KEY_EXTENSION);
-		;
 		Cipher cipher = Cipher.getInstance("RSA");
 		cipher.init(Cipher.DECRYPT_MODE, privKey);
 		byte[] encryptedMessage = readMessageFile(messageName, PATH);

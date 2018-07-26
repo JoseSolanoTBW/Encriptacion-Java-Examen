@@ -19,11 +19,11 @@ public class EncriptionClient {
 	public static void startApp() throws Exception {
 		int option = 0;
 		do {
-    		System.out.println("Seleccione un metodo de encriptacion");
+    		System.out.println("Select a encryption method");
         	System.out.println("1. Symetric Encript");
         	System.out.println("2. Asymetric Encript");
         	System.out.println("3. Data Encript DES");
-        	System.out.println("4.Otro ");
+        	System.out.println("4. Exit");
         	option = Integer.parseInt(br.readLine());
         	if (option >= 1 && option <= 3){
         		executeAction(option);
@@ -42,6 +42,7 @@ public class EncriptionClient {
 		break;
 		
 		case 3: 
+			showEncryptionersMenu(EncryptType.DataEcryptStandard);
 		break;
 		
 		}
@@ -73,6 +74,7 @@ public class EncriptionClient {
 			decryptMessage(encrypType);
 			break;
 		default:
+			decryptMessage(encrypType);
 			break;
 		}
 	}
