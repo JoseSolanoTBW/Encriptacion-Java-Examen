@@ -6,7 +6,7 @@ import com.encriptacion.symetric.SymetricEncrypt;
 
 public class EncryptFactory {
 
-	private static Encryptioner getEncriptioner(EncryptType encriptionMethod) {
+	public static Encryptioner getEncriptioner(EncryptType encriptionMethod) {
 		switch (encriptionMethod) {
 		case Asymetric:
 			return new AsymetricEncrypt();
